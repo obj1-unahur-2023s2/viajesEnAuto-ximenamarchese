@@ -1,0 +1,131 @@
+import remiseras.*
+import clientes.*
+
+describe "Testing de Roxana" {
+
+	test "Cuanto cobra a Ludmila"{
+		
+		assert.equals(180, roxana.precioViaje(ludmila, 10))
+		
+	}
+	
+	test "Cuanto cobra a Ana Maria"{
+		
+		assert.equals(300, roxana.precioViaje(anaMaria, 10))
+		
+	}
+	
+	test "Cuanto cobra a Teresa"{
+		
+		assert.equals(220, roxana.precioViaje(teresa, 10))
+		
+	}
+	
+}
+
+describe "Testing de Gabriela" {
+
+	test "Cuanto cobra a Ludmila"{
+		
+		assert.equals(216, gabriela.precioViaje(ludmila, 10))
+		
+	}
+	
+	test "Cuanto cobra a Ana Maria"{
+		
+		assert.equals(360, gabriela.precioViaje(anaMaria, 10))
+		
+	}
+	
+	test "Cuanto cobra a Teresa"{
+		
+		assert.equals(264, gabriela.precioViaje(teresa, 10))
+		
+	}
+	
+}
+
+describe "Testing de Mariela" {
+
+	test "Cuanto cobra a Ludmila"{
+		
+		assert.equals(180, mariela.precioViaje(ludmila, 10))
+		
+	}
+	
+	test "Cuanto cobra a Ana Maria"{
+		
+		assert.equals(300, mariela.precioViaje(anaMaria, 10))
+		
+	}
+	
+	test "Cuanto cobra a Teresa"{
+		
+		assert.equals(220, mariela.precioViaje(teresa, 10))
+		
+	}
+	
+}
+
+describe "Testing de Juana" {
+
+	test "Cuanto cobra a Ludmila"{
+		
+		assert.equals(200, juana.precioViaje(ludmila, 10))
+		
+	}
+	
+	test "Cuanto cobra a Ana Maria"{
+		
+		assert.equals(200, juana.precioViaje(anaMaria, 10))
+		
+	}
+	
+	test "Cuanto cobra a Teresa"{
+		
+		assert.equals(200, juana.precioViaje(teresa, 10))
+		
+	}
+	
+}
+
+describe "Testing de Lucia" {
+
+	test "No se puede reemplazar a si misma"{
+		
+		assert.throwsExceptionWithMessage("No se puede reemplazar a si misma",
+										 {lucia.reemplazo(lucia)})
+	}
+	
+	test "Puede reemplazar a Roxana"{
+		
+		assert.doesNotThrowException({lucia.reemplazo(roxana)})
+		
+	}
+	
+	test "Reemplazo de Roxana"{
+		
+		lucia.reemplazo(roxana)
+		assert.equals(180, lucia.precioViaje(ludmila, 10))
+	}
+	
+	test "Reemplazo de Mariela y Melina trabaja para Ludmila"{
+		
+		lucia.reemplazo(mariela)
+		melina.cambiarParaQuienTrabaja(ludmila)
+		assert.equals(50, lucia.precioViaje(melina, 1))
+		
+	}
+	
+	test "Reemplazo de Gabriela y Melina trabaja para Ludmila"{
+		
+		lucia.reemplazo(gabriela)
+		melina.cambiarParaQuienTrabaja(ludmila)
+		assert.equals(18, lucia.precioViaje(melina, 1
+			
+		))
+		
+	}
+	
+	
+}
